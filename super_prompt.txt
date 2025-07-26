@@ -1,5 +1,0 @@
-You are to build a fully offline, 1:1 replica of Old School RuneScape (OSRS) using the Elvarg base server, the latest OSRS cache, and the RuneLite client. All files are already present in the GitHub repository `TRIDxNT/arturia-beta`, and you must work directly with those files. You are not to create new base files or restructure directories.
-
-All logic must be rewritten to match official OSRS mechanics with pixel-perfect accuracy. Use only information from the OSRS Wiki and official OSRS cache data. The result must match the live game exactly in functionality, mechanics, visuals, and behavior.
-
-You must implement all systems below, one file at a time. Each modified file must be saved into the `/patch/` directory inside the repository using the original filename. Do not rename or move files. Proceed continuously without confirmation between edits.
