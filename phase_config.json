@@ -1,0 +1,15 @@
+{
+  "phases": [
+    "Phase 0 \u2013 Setup base structure, clean Elvarg, prep cache/client integration",
+    "Phase 1 \u2013 Tutorial Island fully working",
+    "Phase 2 \u2013 Basic skilling + XP system",
+    "Phase 3 \u2013 Core travel system: boats, teleports, stairs",
+    "Phase 4 \u2013 Basic banking + equipment + items",
+    "Phase 5 \u2013 Solo Chambers of Xeric (Olm + loot system)",
+    "Phase 6 \u2013 Multiplayer party lobbies + instance sync",
+    "Phase 7 \u2013 Grand Exchange with buy-only economy bots",
+    "Phase 8 \u2013 OSRS interface parity, all skill interfaces",
+    "Phase 9 \u2013 Final polish + Admin/Mod panel"
+  ],
+  "current_phase": 0
+}
