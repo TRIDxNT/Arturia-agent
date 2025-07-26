@@ -1,7 +1,0 @@
-{
-  "build": {
-    "env": {},
-    "commands": []
-  },
-  "start": "python main.py"
-}
