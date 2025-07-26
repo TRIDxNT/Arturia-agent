@@ -1,1 +1,151 @@
-# Paste your full OSRS replica Super Prompt here.
+You are to build a fully offline, 1:1 replica of Old School RuneScape (OSRS) using the Elvarg base server, the latest OSRS cache, and the RuneLite client. All logic must be rewritten to match official OSRS mechanics with pixel-perfect accuracy. Use only information from the OSRS Wiki and official OSRS cache data. The result must match the live game exactly in functionality, mechanics, visuals, and behavior.
+
+You must implement all systems below, one file at a time. Each modified file must be saved into the `/patch/` directory using the original filename. No file renaming or directory changes. Do not pause for confirmation — proceed continuously from file to file.
+
+---
+
+🧠 Core Server Logic:
+- Full OSRS 600ms tick engine
+- Event system, pathing, NPC aggro, queueing, projectiles, respawn timers
+- Rewrite any Elvarg logic that deviates from OSRS
+
+---
+
+🗃️ All Items (Fully Working):
+
+You must implement **all items** exactly as they behave in OSRS, including:
+
+✅ **Item Equipping:**
+- Correct equipment slot (head, body, legs, ring, ammo, etc.)
+- Equip delay, animation, and UI update
+- Enforce level and quest requirements
+- Prevent equipping invalid gear based on stats or area rules
+
+✅ **Item Stats:**
+- Pull stat bonuses (attack, defence, strength, prayer, etc.) from the cache or Wiki
+- Display correct values in equipment screen
+- Calculate bonuses during combat using worn gear
+
+✅ **Consumables:**
+- Support all food, potions, brews, overloads, tick delays, combo-eating
+- Implement proper healing values, animations, GFX, and stat boosts or reductions
+- Chain actions with delays (e.g. eat + switch)
+
+✅ **Charged Items:**
+- Trident, Blowpipe, Serpentine Helm, Crystal Bow, Ring of Wealth, etc.
+- Track charges, degradation, repair methods, and recharging logic
+- Handle weapon behavior with charges depleted (disable, degrade, or vanish)
+
+✅ **Ammo & Degradable Items:**
+- Arrows, darts, bolts, chinchompas — support equipping, projectile GFX, ammo saving/loss
+- Items like barrows gear and crystal items must degrade on use or time
+- Degradable weapons must follow OSRS durability and repair rules
+
+✅ **Stackable Items:**
+- Coins, runes, arrows, seeds, noted items — must stack in inventory correctly
+- Support trading, banking, and looting logic for stackables
+
+✅ **Noted Items:**
+- Match note IDs from the cache
+- Allow noted-to-unnoted conversion via bank deposit/withdraw
+- Prevent equipping of noted items
+
+✅ **Untradeable & Bound Items:**
+- Infernal cape, Fire cape, Void, Fighter torso, Barrows gloves, etc.
+- Must not be tradable
+- Implement loss-on-death, reclaimability, and insurance if applicable
+
+✅ **Item Interactions:**
+- Use-on-item logic (e.g. herblore, fletching, firemaking)
+- Use-on-object logic (e.g. log + tinderbox = fire)
+- Multi-step crafting chains (e.g. molten glass > orb > enchanted orb)
+
+✅ **Containers & Complex Items:**
+- Clue scrolls, seed packs, herb sacks, rune pouches, looting bags
+- Open/close logic, inventory limits, interface behavior, and contents tracking
+
+✅ **Trading & Drop Logic:**
+- Support player trading, sell offers, GE integration
+- Proper drop ground behavior: visibility, ownership timer, auto-delete
+- Drop-on-death logic: protect item, skull, wilderness vs safe zone
+
+✅ **Examine, Destroy, Combine:**
+- Implement all examine messages
+- Handle item destruction confirmation
+- Handle combination logic (e.g. DFS shield, Toxic blowpipe creation)
+
+✅ **Item Weight, Cosmetics, and Movement Penalties:**
+- Pull weight values from cache
+- Calculate run energy drain properly
+- Support cosmetic overrides (e.g. Graceful outfit reduces drain)
+
+---
+
+⚔️ Combat:
+- Full OSRS combat engine with PvM, PvP, XP styles, attack speed, vengeance, skulls, spec bar, PJ timers, magic accuracy, weapon GFX, and hit delays.
+
+---
+
+🗡️ Weapons:
+- Special attacks, accuracy formulas, prayer bonuses, ammo types, autocast systems, GFX/sound, tick timing, spec energy drain, and degradation (trident, tentacle, blowpipe, claws, etc.)
+
+---
+
+👹 Monsters & Bosses:
+- All monsters and OSRS bosses must have:
+  - OSRS stats, drops, weaknesses, immunities, combat styles, safe zone logic
+  - Working kill timers, respawns, animations, sound, and tile accuracy
+  - Slayer integration and killcount behavior where applicable
+
+---
+
+🎯 Minigames:
+- Fully working Barrows, Fight Caves, Pest Control, LMS, NMZ, Castle Wars, Duel Arena, Warriors' Guild, Mage Arena, and more
+- Include correct lobbies, instancing, reward systems, safe deaths, and wave logic
+
+---
+
+🧩 Skills:
+- All 23 OSRS skills must work using proper tools, XP rates, formulas, animations, and GFX
+- Each skill must enforce tool/item checks and tick delay for every training method
+
+---
+
+🚪 Object Interactions:
+- Support all doors, ladders, staircases, trapdoors, banks, stalls, furnaces, anvils, spinning wheels, teleportation objects, and dungeon access
+- All object IDs and actions must match the OSRS cache
+
+---
+
+🚢 Travel:
+- Full support for:
+  - Fairy rings, spirit trees, charter ships, boats, canoes, teleport spells/tablets/jewelry
+  - Map transitions, lock conditions, animations, and payment mechanics
+
+---
+
+💰 Grand Exchange:
+- Fully functional GE with OSRS UI
+- Economy bots must place **buy-only** offers at fixed item values (no undercutting or selling)
+
+---
+
+🧪 RuneLite Client:
+- RuneLite must support all standard plugins: XP tracking, tile highlights, clue overlays, minimap, spec bar, inventory indicators, and plugin toggles
+
+---
+
+⚙️ Arturia PS Features:
+- Preserve all Arturia PS features: `::bank`, `::gear`, donator benefits, staff commands, teleport commands, and spawn gear
+- Keep custom features modular and separated from OSRS logic
+
+---
+
+🧪 Build Protocol:
+- Pull all data (items, objects, animations, NPCs, combat, skills, minigames) from OSRS Wiki and OSRS cache
+- Only edit one file at a time
+- Save all modified files into `/patch/` using their original filename
+- Never rename or restructure folders or files
+- Automatically proceed to the next required file — no human prompts or pauses
+
+This is a single continuous task. Work through the entire game one file at a time, saving each edited file into `/patch/` and immediately continuing to the next system required to fulfill this spec. All game systems must function 1:1 with the official live version of Old School RuneScape.
