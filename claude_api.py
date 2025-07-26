@@ -5,7 +5,7 @@ def run_claude_prompt(prompt, output_dir):
     client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
 
     response = client.messages.create(
-        model="claude-3-sonnet-20240229",
+        model="claude-3-haiku-20240307",
         max_tokens=4000,
         temperature=0.2,
         messages=[
