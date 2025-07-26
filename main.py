@@ -1,6 +1,6 @@
 import os
 from claude_client import ask_claude
-from patcher import read_file, write_patch_file
+from patcher import read_file, write_patch_file, write_new_file
 from config import REPO_PATH
 
 def main():
@@ -16,30 +16,21 @@ def main():
                 continue
 
             print(f"🔧 Editing: {file_path}")
-
             original_code = read_file(file_path)
-            full_prompt = f"""
-Your task is to transform this OSRS server/client file into a 1:1 replica based on the following spec:
 
-### SUPER PROMPT:
+            prompt = f"""
+You are a master OSRS systems developer. Your job is to help build a fully accurate 1:1 OSRS replica called Arturia.
+
+--- SUPER PROMPT ---
 {super_prompt}
 
-### FILE NAME:
-{file}
+--- TASK ---
+You are being given an existing file. Modify it if needed to match OSRS logic and features as described above. 
 
-### ORIGINAL CONTENT:
+If additional support files (new files/classes/modules) are required, list them with their filenames and full contents.
+
+--- FILE BEING MODIFIED ---
+Filename: {file}
+Content:
 ```java
 {original_code}
-```
-
-Only return the modified file content. Do not include comments, explanations, or code fences.
-"""
-
-            modified_code = ask_claude(full_prompt)
-            write_patch_file(file_path, modified_code)
-            print(f"✅ Patched: {file}")
-
-    print("🏁 Build complete. All files written to /patch.")
-
-if __name__ == "__main__":
-    main()
